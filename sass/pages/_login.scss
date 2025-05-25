@@ -1,0 +1,130 @@
+@use "/sass/abstracts/variables" as *;
+@use "/sass/abstracts/mixins" as *;
+@use 'sass:color';
+
+
+.login {
+  padding: 1.5rem 1rem;
+  background: $background-light;
+  min-height: 100vh;
+
+  @include breakpoint(tablethorizontal) {
+    padding: 2rem 3rem;
+  }
+  @include breakpoint(desktop) {
+    padding: 3rem 8vw;
+  }
+
+  .login-hero {
+    text-align: center;
+    margin-bottom: 2.5rem;
+
+    .login-title {
+      color: $primary;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+
+      @include breakpoint(desktop) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .login-description {
+      color: $text;
+      font-size: 1.1rem;
+      margin-bottom: 0;
+      @include breakpoint(desktop) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .login-form-section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-form {
+    background: $background;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 24px rgba(30, 58, 138, 0.13);
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include breakpoint(tablethorizontal) {
+      padding: 2.5rem 2.5rem;
+      max-width: 420px;
+    }
+    @include breakpoint(desktop) {
+      padding: 3rem 3.5rem;
+      max-width: 450px;
+    }
+
+    .login-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    .login-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      width: 100%;
+
+      label {
+        color: $primary;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+
+      input {
+        border: 1px solid $secondary;
+        border-radius: 0.4rem;
+        padding: 0.6rem 0.8rem;
+        font-size: 1rem;
+        background: $background-light;
+        color: $text;
+        transition: border-color 0.2s;
+        width: 100%;
+        max-width: 100%;
+
+        &:focus {
+          outline: none;
+          border-color: $primary;
+          background: color.scale($primary, $lightness: -24.2857142857%);
+
+        }
+      }
+    }
+
+    .login-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+
+      .login-btn {
+        padding: 0.7rem 2rem;
+        border-radius: 0.4rem;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        background: $primary;
+        color: #fff;
+        transition: background 0.2s, color 0.2s;
+
+        &:hover {
+          background: color.scale($primary, $lightness: -24.2857142857%);
+        }
+      }
+    }
+  }
+}

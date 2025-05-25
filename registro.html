@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js" lang="es">
+<head>
+  <title>Registro | Conquer Academy</title>
+  <meta name="description" content="Regístrate para formarte en nuestros cursos">
+  <meta name="keywords" content="registro, cursos, conquer academy, blockchain, desarrollo">
+  <meta name="author" content="davidmarti">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1e7bbf">
+</head>
+<body>
+  <header>
+    <figure class="header_figure">
+      <img src="img/Conquer Blocks.png" width="305" height="75" alt="logo conquerblocks">
+    </figure>
+    <nav class="header_nav">
+      <div class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="quienes_somos.html">Quienes somos</a></li>
+        <li class="nav-item"><a href="cursos.html">Cursos</a></li>
+        <li class="nav-item"><a href="blog.html">Blog</a></li>
+        <li class="nav-item">Registro</li>
+        <li class="nav-item"><a href="login.html">Log in</a></li>
+        <li class="nav-item"><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="register">
+    <section class="register-hero">
+      <h1 class="register-title">Formulario de registro</h1>
+      <p class="register-description">Rellena el siguiente formulario para unirte a nuestra comunidad y acceder a todos los cursos de Conquer Academy.</p>
+    </section>
+    <section class="register-form-section">
+      <form class="register-form" action="" method="post" enctype="multipart/form-data">
+        <fieldset class="register-fieldset">
+          <legend>Datos personales</legend>
+          <div class="register-fields">
+            <div class="register-field">
+              <label>Nombre:</label>
+              <input type="text" required minlength="3">
+            </div>
+            <div class="register-field">
+              <label>Apellidos:</label>
+              <input type="text" required minlength="6">
+            </div>
+            <div class="register-field">
+              <label>Fecha de nacimiento:</label>
+              <input type="date" required>
+            </div>
+            <div class="register-field">
+              <label>Correo electrónico:</label>
+              <input type="email" required>
+            </div>
+            <div class="register-field">
+              <label>Dirección:</label>
+              <input type="text" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="register-fieldset">
+          <legend>Otros</legend>
+          <div class="register-fields">
+            <div class="register-field">
+              <label>Página web:</label>
+              <input type="url">
+            </div>
+            <div class="register-field">
+              <label>Sube tu foto:</label>
+              <input type="file" required>
+            </div>
+            <div class="register-field">
+              <label>Biografía:</label>
+              <textarea cols="40" rows="5" required></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="register-actions">
+          <button type="submit" class="register-btn">Enviar</button>
+          <input type="reset" value="Borrar formulario" class="register-btn-secondary">
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2023 - Todos los derechos reservados
+      <a href="avisolegal.html" class="footer-link">Aviso legal</a>
+    </p>
+  </footer>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

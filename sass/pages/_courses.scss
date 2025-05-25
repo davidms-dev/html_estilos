@@ -1,0 +1,165 @@
+@use "/sass/abstracts/variables" as *;
+@use "/sass/abstracts/mixins" as *;
+
+.courses {
+  padding: 1.5rem 1rem;
+  background: $background-light;
+
+  @include breakpoint(tablethorizontal) {
+    padding: 1.5rem 1rem;
+  }
+  @include breakpoint(desktop) {
+    padding: 3rem 8vw;
+  }
+
+  .courses-hero {
+    margin-bottom: 2.5rem;
+    text-align: center;
+
+    .courses-hero-title {
+      color: $primary;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+
+      @include breakpoint(desktop) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .courses-hero-description {
+      color: $text;
+      font-size: 1.1rem;
+      margin-bottom: 0;
+      @include breakpoint(desktop) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .courses-list {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .courses-list-intro {
+      margin-bottom: 2rem;
+      text-align: center;
+
+      .courses-list-subtitle {
+        color: $secondary;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .courses-list-description {
+        color: $text;
+        font-size: 1rem;
+      }
+    }
+
+    .courses-card {
+      background: $background;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 24px rgba(30, 58, 138, 0.15);
+      padding: 1.5rem 1rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+
+      @include breakpoint(tablethorizontal) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        gap: 2rem;
+
+        .courses-card-title {
+            grid-column: 1 / 3; // Ocupa las dos columnas en la primera fila
+            grid-row: 1 / 2;
+            text-align: center;
+        }
+        .courses-card-image {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+        }
+        .courses-card-description {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            text-align: left;
+        }
+        .courses-card-link {
+            grid-column: 1 / 3; // Ocupa las dos columnas en la tercera fila
+            grid-row: 3 / 4;
+            justify-self: start;
+        }
+      }
+
+      @include breakpoint(desktop) {
+        padding: 2.5rem 4rem;
+      }
+
+      .courses-card-image {
+        width: 100%;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        @include breakpoint(desktop){
+          display: flex;
+        }
+
+        img {
+          width: 100%;
+          display: block;
+          border-radius: 0.5rem;
+          @include breakpoint(desktop){
+            object-fit: cover;
+          }
+        }
+        #img-cripto-desktop {
+          max-height: 245px;
+          object-fit: cover;
+        }
+      }
+
+      .courses-card-title {
+        color: $primary;
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        text-align: left;
+
+        @include breakpoint(tablethorizontal) {
+          text-align: center;
+          font-size: 1.6rem;
+        }
+        @include breakpoint(desktop) {
+          font-size: 1.8rem;
+        }
+      }
+
+      .courses-card-description {
+        color: $text;
+        font-size: 1rem;
+        text-align: center;
+
+        @include breakpoint(tablethorizontal) {
+          text-align: left;
+          font-size: 1.1rem;
+        }
+        @include breakpoint(desktop) {
+          font-size: 1.15rem;
+        }
+      }
+
+      .courses-card-link {
+        color: $secondary;
+        text-decoration: underline;
+        font-weight: 500;
+        transition: color 0.2s;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}

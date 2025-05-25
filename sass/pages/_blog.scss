@@ -1,0 +1,165 @@
+@use "/sass/abstracts/variables" as *;
+@use "/sass/abstracts/mixins" as *;
+
+.blog {
+  padding: 1.5rem 1rem;
+  background: $background-light;
+
+  @include breakpoint(tablethorizontal) {
+    padding: 2rem 3rem;
+  }
+  @include breakpoint(desktop) {
+    padding: 3rem 8vw;
+  }
+
+  .blog-hero {
+    margin-bottom: 2.5rem;
+    text-align: center;
+
+    .blog-hero-title {
+      color: $primary;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+
+      @include breakpoint(tablethorizontal) {
+        font-size: 2rem;
+      }
+
+      @include breakpoint(desktop) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .blog-hero-description {
+      color: $text;
+      font-size: 1.1rem;
+      margin-bottom: 0;
+      @include breakpoint(desktop) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .blog-news {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .blog-news-title {
+      color: $secondary;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      text-align: center;
+
+      @include breakpoint(tablethorizontal) {
+        text-align: left;
+      }
+    }
+
+    .blog-news-card {
+      background: $background;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 24px rgba(30, 58, 138, 0.15);
+      padding: 1.5rem 1rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+
+      @include breakpoint(tablethorizontal) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        gap: 2rem;
+        padding: 2rem 3rem;
+
+        .blog-news-card-title {
+          grid-column: 1 / 3;
+          grid-row: 1 / 2;
+          text-align: center;
+        }
+        .blog-news-card-image {
+          grid-column: 1 / 2;
+          grid-row: 2 / 3;
+        }
+        .blog-news-card-description {
+          grid-column: 2 / 3;
+          grid-row: 2 / 3;
+          text-align: left;
+        }
+        .blog-news-card-link {
+          grid-column: 1 / 3;
+          grid-row: 3 / 4;
+          justify-self: start;
+        }
+      }
+
+      @include breakpoint(desktop) {
+        padding: 2.5rem 4rem;
+      }
+
+      .blog-news-card-image {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 0.5rem;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          display: block;
+          border-radius: 0.5rem;
+          object-fit: cover;
+          object-position: center;
+        }
+        figcaption {
+          font-size: 0.9rem;
+          color: $text;
+          text-align: center;
+          margin-top: 0.5rem;
+        }
+      }
+
+      .blog-news-card-title {
+        color: $primary;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        text-align: center;
+
+        @include breakpoint(tablethorizontal) {
+          text-align: center;
+        }
+        @include breakpoint(desktop) {
+          font-size: 1.4rem;
+        }
+      }
+
+      .blog-news-card-description {
+        color: $text;
+        font-size: 1rem;
+        text-align: center;
+
+        @include breakpoint(tablethorizontal) {
+          text-align: left;
+          font-size: 1.1rem;
+        }
+        @include breakpoint(desktop) {
+          font-size: 1.15rem;
+        }
+      }
+
+      .blog-news-card-link {
+        color: $secondary;
+        text-decoration: underline;
+        font-weight: 500;
+        transition: color 0.2s;
+        margin-bottom: 0.5rem;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}

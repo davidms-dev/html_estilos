@@ -1,0 +1,12 @@
+@use "/sass/abstracts/variables" as *;
+footer {
+  background-color: $dark;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+
+  a {
+    color: $accent;
+    text-decoration: underline;
+  }
+}

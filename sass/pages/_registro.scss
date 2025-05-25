@@ -1,0 +1,190 @@
+@use "/sass/abstracts/variables" as *;
+@use "/sass/abstracts/mixins" as *;
+@use 'sass:color';
+
+
+.register {
+  padding: 1.5rem 1rem;
+  background: $background-light;
+  min-height: 100vh;
+
+  @include breakpoint(tablethorizontal) {
+    padding: 2rem 3rem;
+  }
+  @include breakpoint(desktop) {
+    padding: 3rem 8vw;
+  }
+
+  .register-hero {
+    text-align: center;
+    margin-bottom: 2.5rem;
+
+    .register-title {
+      color: $primary;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+
+      @include breakpoint(desktop) {
+        font-size: 2.5rem;
+      }
+    }
+
+    .register-description {
+      color: $text;
+      font-size: 1.1rem;
+      margin-bottom: 0;
+      @include breakpoint(desktop) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .register-form-section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .register-form {
+    background: $background;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 24px rgba(30, 58, 138, 0.13);
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include breakpoint(tablethorizontal) {
+      padding: 2.5rem 2.5rem;
+      max-width: 600px;
+    }
+    @include breakpoint(desktop) {
+      padding: 3rem 3.5rem;
+      max-width: 700px;
+    }
+
+    .register-fieldset {
+      border: 1px solid $primary;
+      border-radius: 0.5rem;
+      padding: 1.5rem 1rem 1rem 1rem;
+      margin-bottom: 1.5rem;
+      background: $background-light;
+
+      legend {
+        color: $primary;
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 0 0.5rem;
+      }
+
+    }
+
+    .register-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      width: 100%;
+
+      @include breakpoint(tablethorizontal) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.5rem 2rem;
+
+        // Si hay un campo impar al final, que ocupe todo el ancho
+        .register-field:nth-child(odd):last-child {
+          min-width: 100%;
+          flex-basis: 100%;
+        }
+      }
+    }
+
+    .register-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      width: 100%;
+      min-width: 0;
+
+      @include breakpoint(tablethorizontal) {
+        min-width: 45%;
+        flex: 1 1 45%;
+      }
+
+      label {
+        color: $primary;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+
+      input,
+      textarea {
+        border: 1px solid $secondary;
+        border-radius: 0.4rem;
+        padding: 0.6rem 0.8rem;
+        font-size: 1rem;
+        background: $background-light;
+        color: $text;
+        transition: border-color 0.2s;
+        width: 100%;
+        max-width: 100%;
+
+        &:focus {
+          outline: none;
+          border-color: $primary;
+          background: color.scale($primary, $lightness: -24.2857142857%);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+    }
+
+    .register-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 1rem;
+
+      @include breakpoint(tablethorizontal) {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .register-btn,
+      .register-btn-secondary {
+        padding: 0.7rem 2rem;
+        border-radius: 0.4rem;
+        border: none;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+      }
+
+      .register-btn {
+        background: $primary;
+        color: #fff;
+
+        &:hover {
+          background: color.scale($primary, $lightness: -24.2857142857%);
+        }
+      }
+
+      .register-btn-secondary {
+        background: $background-light;
+        color: $primary;
+        border: 1px solid $primary;
+
+        &:hover {
+          background: $primary;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
